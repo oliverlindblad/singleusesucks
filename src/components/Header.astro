@@ -1,5 +1,32 @@
 ---
+import Link from '../components/Link.astro'
+import Button from '../components/Button.astro'
+import Button2 from '../components/Button2.astro'
 ---
-<div>
-Header - tilføj navigation mm.
+<div x-data="{ showmenu: false }" class="fixed top-0 left-0 w-full z-50 p-4 bg-transparent">
+    <div id="navbar" class="flex flex-row justify-between">
+        <div id="logo" class="flex items-center gap-2">
+            <a href="/">
+                <img src="/logo_plastic_change.svg" alt="Plastic Change" class="h-15 w-full">
+            </a>
+        </div>
+        <nav id="desktopmenu" class="hidden lg:block font-digibats text-xl text-white no-underline">
+            <ul class="flex flex-row gap-6 p-4 items-center">
+                <li class="flex items-center"> <!-- Aligns the heart icon with text -->
+                     <Button2 class="p-2">
+                        <a href="https://www.hjemhavn.dk/" target="_blank">
+                        <img src="merch2.svg" alt="Merch" class="h-20 w-30" />
+                        </a>
+                    </Button2>
+                    <Button class="p-2">
+                        <a href="https://plasticchange.dk/giv-et-bidrag/" target="_blank">
+                        <img src="hjerte2.svg" alt="Heart Icon" class="h-20 w-30" />
+                        </a>
+                    </Button>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
+
+
