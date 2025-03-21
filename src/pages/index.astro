@@ -32,12 +32,24 @@ import thumbsup from "../assets/images/thumbsup.png";
   </div>
 </article>
 
-<script>
-  document.addEventListener("scroll", function () {
-    const fish = document.getElementById("parallaxFish");
-    let scrollY = window.scrollY;
-    fish.style.transform = `translateY(${scrollY * 0.2}px)`;
-  });
-</script>
+
 
 </MainLayout>
+
+
+	<script>
+	/* Import af Motion One bibliotek */
+	import { animate, stagger, inView, scroll } from "motion";
+	</script>
+
+<script>
+	scroll(animate(".parallaxgrafik1", { y: [400, -600] }), {
+		target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
+	});
+	scroll(animate(".parallaxgrafik2", { x:[-100, 100], y: [800, -1800] }), {
+		target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
+	});
+	scroll(animate(".parallaxgrafik3", { x: [-1500, 2000], y: [400, 0] }), {
+		target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
+	});
+</script>
