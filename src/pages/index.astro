@@ -1,55 +1,62 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import { onMount } from "astro/client"; // Ensure scripts run after mount
+import { animate, scroll } from "motion";
 ---
+
 <MainLayout title="SingleUseSucks">
-<article>
-  <div class="relative w-full h-screen">
-    <!-- Background Image -->
-    <img src="/ocean2.webp" alt="Baggrunds billede til hero sektion">
+  <article>
+    <div class="relative w-full h-screen">
+      <!-- Background Image -->
+      <img src="/ocean2.webp" alt="Baggrunds billede til hero sektion">
 
-    <!-- Huge Title -->
-    <h1 class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 
-               text-white text-9xl md:text-9xl font-bold text-center">
-        #SingleUseSucks
-    </h1>
+      <!-- Huge Title -->
+    <article class="absolute top-2/4 left-1/2 -translate-x-1/2 -translate-y-1/2  justify-center text-center mt-[-30px] lg:mt-3 col-span-12 z-20"> 
+      <h1 class="relative z-30 text-[50px] md:text-[100px] lg:text-[140px] font-display text-white">SINGLE USE</h1> 
+      <h1 class="text-[150px] md:text-[280px] lg:text-[380px] leading-[26px] md:leading-[55px] font-display text-rose-500 pb-20 md:pb-32 lg:pb-36">SUCKS</h1> 
+    </article>
 
-    <!-- Centered Turtle Image -->
-    <div class="absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <img src="/turtle.webp" alt="Turtle" class="w-150 md:w-160">
+      <!-- Centered Turtle Image -->
+      <div class="parallaxgrafik absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <img src="/turtle.webp" alt="Turtle" class="w-150 md:w-150 parallaxgrafik4">
+      </div>
+
+       <!-- Parallax Fish Layer (Above Background) -->
+       <section class="parallaxgrafik absolute top-0 left-0 w-full h-full pointer-events-none">
+      <img src="/fisk1.webp" alt="Fish 1" class="absolute top-3/3 left-2/4 -translate-x-1/2 -translate-y-1/2 w-20 md:w-80 rotate-330 parallaxgrafik1">
+      <img src="/fisk2.webp" alt="Fish 2" class="absolute top-2/4 right-1/4 -translate-x-1/2 -translate-y-1/2 w-16 md:w-70 -rotate-2 parallaxgrafik3">
+      <img src="/fisk3.webp" alt="Fish 3" class="absolute top-4/5 left-1/10 -translate-x-1/2 -translate-y-1/2 w-24 md:w-90 rotate-340 parallaxgrafik1">
+      <img src="/fisk4.webp" alt="Fish 4" class="absolute top-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2 w-20 md:w-110 -rotate-350 parallaxgrafik2">
+      <img src="/fisk5.webp" alt="Fish 5" class="absolute top-1/2 left-3/5 -translate-x-1/2 -translate-y-1/2 w-18 md:w-60 rotate-20 parallaxgrafik3">
+      <img src="/fisk6.webp" alt="Fish 6" class="absolute top-2/4 right-2/7 -translate-x-1/2 -translate-y-1/2 w-22 md:w-115 -rotate-40 parallaxgrafik3">
+   </section>
+     
     </div>
-
-    <!-- Fish Images with Rotation -->
-    <img src="/fisk1.webp" alt="Fish 1" class="absolute top-3/3 left-2/4 -translate-x-1/2 -translate-y-1/2 w-20 md:w-80 rotate-330">
-    <img src="/fisk2.webp" alt="Fish 2" class="absolute top-2/4 right-1/20 -translate-x-1/2 -translate-y-1/2 w-16 md:w-70 -rotate-3">
-    <img src="/fisk3.webp" alt="Fish 3" class="absolute top-4/5 left-1/10 -translate-x-1/2 -translate-y-1/2 w-24 md:w-90 rotate-340">
-    <img src="/fisk4.webp" alt="Fish 4" class="absolute top-1/2 right-1/4 -translate-x-1/2 -translate-y-1/2 w-20 md:w-110 -rotate-340">
-    <img src="/fisk5.webp" alt="Fish 5" class="absolute top-3/4 left-4/5 -translate-x-1/2 -translate-y-1/2 w-18 md:w-60 rotate-20">
-    <img src="/fisk6.webp" alt="Fish 6" class="absolute top-2/4 right-2/4 -translate-x-1/2 -translate-y-1/2 w-22 md:w-115 -rotate-40">
-  </div>
-</article>
-
-
-
+  </article>
 </MainLayout>
 
-
-	<script>
-	/* Import af Motion One bibliotek */
-	import { animate, stagger, inView, scroll } from "motion";
-	</script>
-
 <script>
-	scroll(animate(".parallaxgrafik1", { y: [400, -600] }), {
-		target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
-	});
-	scroll(animate(".parallaxgrafik2", { x:[-100, 100], y: [800, -1800] }), {
-		target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
-	});
-	scroll(animate(".parallaxgrafik3", { x: [-1500, 2000], y: [400, 0] }), {
-		target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
-	});
+  import { animate, scroll } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    /* Ensure elements exist before applying animations */
+    scroll(animate(".parallaxgrafik1", { y: [400, -600] }), {
+      target: document.querySelector(".parallaxgrafik"), 
+      offset: ["start end", "end start"]
+    });
+
+    scroll(animate(".parallaxgrafik2", { x:[-1000, 2000], y: [200, 100] }), {
+      target: document.querySelector(".parallaxgrafik"), 
+      offset: ["start end", "end start"]
+    });
+
+    scroll(animate(".parallaxgrafik3", { x: [-1500, 900], y: [400, 0] }), {
+      target: document.querySelector(".parallaxgrafik"), 
+      offset: ["start end", "end start"]
+    });
+     scroll(animate(".parallaxgrafik4", { x: [-1000, 1000], y: [400, 0] }), {
+      target: document.querySelector(".parallaxgrafik"), 
+      offset: ["start end", "end start"]
+    });
+  });
 </script>
