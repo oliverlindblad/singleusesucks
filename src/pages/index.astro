@@ -35,6 +35,16 @@ import thumbsup from "../assets/images/thumbsup.png";
       <img src="/fisk5.webp" alt="Fish 5" class="absolute top-1/2 left-3/5 -translate-x-1/2 -translate-y-1/2 w-18 md:w-60 rotate-20 parallaxgrafik3">
       <img src="/fisk6.webp" alt="Fish 6" class="absolute top-2/4 right-2/7 -translate-x-1/2 -translate-y-1/2 w-22 md:w-115 -rotate-40 parallaxgrafik3">
    </section>
+
+   	<div class="absolute top-[150vh] overflow-clip">
+		<section id="horisontalscrollsection" class="h-[200vw]">
+			<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[20vh]">
+			<li class="pl-80 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row max-w-[800px]"><img src="/naja-bertolt.webp" class="w-2/3" alt="foto" /><figcaption class="pl-4 italic w-1/3 text-white text-2xl">Over 90 % af havfuglene har plastik i maven, da de forveksler det med mad. Dette fører til sult, da plastik fylder maven uden at give næring.</figcaption></figure></li>
+			<li class="pl-80 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row max-w-[800px]"><img src="/joshua.webp" class="w-2/3" alt="foto" /><figcaption class="pl-4 italic w-1/3 text-white text-2xl">Over 90 % af havfuglene har plastik i maven, da de forveksler det med mad. Dette fører til sult, da plastik fylder maven uden at give næring.</figcaption></figure></li>
+      <li class="pl-80 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><figure class="flex flex-row max-w-[800px]"><img src="/naja.webp" class="w-2/3" alt="foto" /><figcaption class="pl-4 italic w-1/3 text-white text-2xl">Over 90 % af havfuglene har plastik i maven, da de forveksler det med mad. Dette fører til sult, da plastik fylder maven uden at give næring.</figcaption></figure></li>
+    </ul>
+		</section>
+	</div>
      
     </div>
   </article>
@@ -64,4 +74,13 @@ import thumbsup from "../assets/images/thumbsup.png";
       offset: ["start end", "end start"]
     });
   });
+
+  	/* Horisontal scroll sektion */
+	scroll(
+	animate("#horisontalliste", {
+		transform: ["none", "translateX(-200vw)"]
+	}),
+	{ target: document.querySelector("#horisontalscrollsection") }
+	); 
+  
 </script>
