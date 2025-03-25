@@ -46,7 +46,7 @@ import thumbsup from "../assets/images/thumbsup.png";
 		</section>
 	</div>
 
-  <div class="absolute top-[530vh] lg:ml-50 lg:mr-15">
+  <div class="absolute top-[570vh] lg:ml-50 lg:mr-15 ">
     <form action class="w-auto text-p_s md:text-p_m lg:text-p text-5xl text-white">
 <!--Beløb -->
 
@@ -83,17 +83,27 @@ med
 <br>med venlig hilsen
 <input type="text" name="navn" placeholder="fulde navn" class="font-bold bg-none border-0 bg-transparent cursor-pointer focus:border-pink text-rose-500 text-5xl placeholder-rose-500" aria-label="navn">
     </form>
+<a
+  href="https://plasticchange.dk/giv-et-bidrag/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="bg-rose-500 text-white text-5xl px-6 py-2 rounded-md 
+         hover:border-rose-500 hover:bg-transparent transition 
+         inline-block text-center border border-rose-500">
+  støt nu
+</a>
+
 
 </div>
   
- <h1 class="absolute top-[590vh] text-6xl text-rose-500 pl-35 text-center">
+ <h1 class="absolute top-[670vh] text-6xl text-rose-500 pl-35 text-center">
   Fordeling af plastforbruget i forskellige sektorer
 </h1>
-     <div class="absolute top-[635vh] left-1/2 -translate-x-1/2 -translate-y-1/2">
+     <div class="absolute top-[720vh] left-1/2 -translate-x-1/2 -translate-y-1/2">
        
         <img src="/datavisualisering.png" alt="Datavis" class="w-150 md:w-500 animate-pulse">
       </div>
-     <div class="absolute top-[680vh]">
+     <div class="absolute top-[780vh]">
 <img src="/plastikfakta1.png" alt="plastikfact" class="fotoinview w-150 md:w-150">
 <img src="/plastikfakta3.png" alt="plastikfact" class="fotoinview2 w-150 md:w-150">
 <img src="/plastikfakta2.png" alt="plastikfact" class="fotoinview3 w-150 md:w-150">
@@ -143,9 +153,9 @@ med
   /* inView animation */
 	inView( ".fotoinview" , () =>{
 	animate( ".fotoinview", { x: [-2000, 100 ] }, { duration: 3 })
-  animate( ".fotoinview2", { x: [2000, 750 ] }, { delay: 3, duration: 3 })
-  animate( ".fotoinview3", { x: [-2000, 100 ] }, { delay: 6, duration: 3 })
-  animate( ".fotoinview4", { x: [2000, 750 ] }, { delay: 9, duration: 3 })
+  animate( ".fotoinview2", { x: [2000, 750 ] }, { delay: 2, duration: 3 })
+  animate( ".fotoinview3", { x: [-2000, 100 ] }, { delay: 4, duration: 3 })
+  animate( ".fotoinview4", { x: [2000, 750 ] }, { delay: 6, duration: 3 })
 	})
 
   

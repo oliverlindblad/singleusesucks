@@ -1,6 +1,53 @@
 ---
+let email = "";
+function handleInput(event) {
+email = event.target.value;
+}
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
+
+<div class="absolute top-[1050vh] flex items-center justify-center min-h-screen pl-10 space-x-12 w-full">
+<!-- Element 1: Socials Section -->
+<div class="relative flex flex-col items-center w-[700px] h-[400px] pl-10">
+<!-- Social Media Icons (Kept Absolute) -->
+<a href="https://www.facebook.com/plasticchange/" target="_blank" rel="noopener noreferrer" class="z-20">
+<img src="/facebook.svg" alt="Facebook" class="absolute w-26 h-26 top-10 left-100 z-10" />
+</a>
+<a href="https://www.instagram.com/plasticchange" target="_blank" rel="noopener noreferrer" class="z-20">
+<img src="/instagram.svg" alt="Instagram" class="absolute w-28 h-28 top-25 left-140 z-20" />
+</a>
+<a href="https://www.linkedin.com/company/plastic-change/" target="_blank" rel="noopener noreferrer" class="z-20">
+<img src="/linkedin.svg" alt="LinkedIn" class="absolute w-26 h-26 top-50 left-120 z-20" />
+</a>
+<!-- Follow Us Text -->
+<div class="text-neutral-50 text-4xl font-light text-left relative z-10">
+<p class="text-[50px] md:text-[100px] lg:text-[140px] font-display text-white">
+Følg <br> os på <br> socials!
+</p>
 </div>
-  
+</div>
+<!-- Element 2: Signup Form -->
+<form class="w-auto text-5xl text-white pl-10">
+<p>Jeg vil gerne tilmelde mig <br> til nyhedsbrevet!</p>
+<label class="block mt-4 text-withe">Min mail er</label>
+<input
+type="text"
+name="email"
+placeholder="E-mail."
+class="font-bold bg-transparent border-0 cursor-pointer focus:border-pink text-rose-500 text-5xl placeholder-rose-500"
+aria-label="Email address"
+/>
+<a
+href="https://plasticchange.dk/nyheder/"
+target="_blank"
+rel="noopener noreferrer"
+class="bg-rose-500 text-white px-6 py-2 rounded-md mt-4
+         hover:border-rose-500 hover:bg-transparent transition 
+         inline-block text-center border border-rose-500">
+tilmeld
+</a>
+</form>
+</div>
+
+<script>
+import { animate, scroll } from "motion";
+</script>
