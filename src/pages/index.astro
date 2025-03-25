@@ -4,6 +4,7 @@ import { onMount } from "astro/client"; // Ensure scripts run after mount
 import { animate, scroll } from "motion";
 import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
+import Form from '../components/Form.astro';
 import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
 ---
@@ -45,6 +46,47 @@ import thumbsup from "../assets/images/thumbsup.png";
     </ul>
 		</section>
 	</div>
+
+  <div class="absolute top-[530vh] lg:ml-5">
+    <form action class="w-auto text-p_s md:text-p_m lg:text-p text-5xl text-white">
+<!--Beløb -->
+
+Jeg vil gerne bidrage med
+
+<select class="font-bold text-p_s md:text-p_m lg:text-p bg-none border-0 bg-transparent inline-block p-0 m-0 focus:ring-0 focus:border-pink cursor-pointer text-rose-500 text-5xl">
+<option value="1">et beløb</option>
+<option value="2">50 kr</option>
+<option value="3">100 kr</option>
+<option value="4">200 kr</option>
+<option value="5">500 kr</option>
+</select>
+<!--Gange -->
+og det vil jeg gøre
+<select class="font-bold text-p_s md:text-p_m lg:text-p bg-none border-0 bg-transparent inline-block p-0 m-0 focus:ring-0 focus:border-pink cursor-pointer text-rose-500 text-5xl">
+    <option value="1">antal gange</option>
+    <option value="2">1 gang</option>
+    <option value="3">månedligt</option>
+    <option value="4">årligt</option>
+</select>
+
+<!--betalingsform -->
+med
+<select class="font-bold text-p_s md:text-p_m lg:text-p bg-none border-0 bg-transparent inline-block p-0 m-0 focus:ring-0 focus:border-pink cursor-pointer text-rose-500 text-5xl">
+<option value="1">betalingsform.</option>
+<option value="2">mobilepay.</option>
+<option value="3">dankort.</option>
+</select>
+<!--oplysninger -->
+Mit telefonnummer er
+<input type="text" name="tlf.nr" placeholder="tlf.nr" class="font-bold bg-none border-0 bg-transparent cursor-pointer focus:border-pink text-rose-500 text-5xl placeholder-rose-500" aria-label="tlf.nr">
+og hvis du gerne vil have min mail, så er den
+<input type="text" name="email" placeholder="E-mail." class="font-bold bg-none border-0 bg-transparent cursor-pointer focus:border-pink text-rose-500 text-5xl placeholder-rose-500" aria-label="Email address">
+med venlig hilsen
+<input type="text" name="navn" placeholder="fulde navn" class="font-bold bg-none border-0 bg-transparent cursor-pointer focus:border-pink text-rose-500 text-5xl placeholder-rose-500" aria-label="navn">
+    </form>
+
+</div>
+  
      
     </div>
   </article>
