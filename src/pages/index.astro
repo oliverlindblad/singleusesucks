@@ -4,7 +4,6 @@ import { onMount } from "astro/client"; // Ensure scripts run after mount
 import { animate, scroll } from "motion";
 import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
-import Form from '../components/Form.astro';
 import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
 ---
@@ -87,13 +86,29 @@ med
 
 </div>
   
-     
+ <h1 class="absolute top-[590vh] text-6xl text-rose-500 pl-35 text-center">
+  Fordeling af plastforbruget i forskellige sektorer
+</h1>
+     <div class="absolute top-[635vh] left-1/2 -translate-x-1/2 -translate-y-1/2">
+       
+        <img src="/datavisualisering.png" alt="Datavis" class="w-150 md:w-500 animate-pulse">
+      </div>
+     <div class="absolute top-[680vh]">
+<img src="/plastikfakta1.png" alt="plastikfact" class="fotoinview w-150 md:w-150">
+<img src="/plastikfakta3.png" alt="plastikfact" class="fotoinview2 w-150 md:w-150">
+<img src="/plastikfakta2.png" alt="plastikfact" class="fotoinview3 w-150 md:w-150">
+<img src="/plastikfakta4.png" alt="plastikfact" class="fotoinview4 w-150 md:w-150">
+
+</div>
+
+
+
     </div>
   </article>
 </MainLayout>
 
 <script>
-  import { animate, scroll } from "motion";
+  import { animate, scroll, inView } from "motion";
 
   document.addEventListener("DOMContentLoaded", () => {
     /* Ensure elements exist before applying animations */
@@ -124,5 +139,14 @@ med
 	}),
 	{ target: document.querySelector("#horisontalscrollsection") }
 	); 
+
+  /* inView animation */
+	inView( ".fotoinview" , () =>{
+	animate( ".fotoinview", { x: [-2000, 100 ] }, { duration: 3 })
+  animate( ".fotoinview2", { x: [2000, 750 ] }, { delay: 3, duration: 3 })
+  animate( ".fotoinview3", { x: [-2000, 100 ] }, { delay: 6, duration: 3 })
+  animate( ".fotoinview4", { x: [2000, 750 ] }, { delay: 9, duration: 3 })
+	})
+
   
 </script>
